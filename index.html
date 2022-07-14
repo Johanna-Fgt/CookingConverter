@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Cooking converter for travelers</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="brand">
+                <img src="./images/cooking.png" alt="Logo Cooking converter" />
+            <a href="/">Cooking converter for travelers</a>
+            </div>
+            <button
+              id="nav-toggle"
+              aria-label="Toggle navigation"
+              onclick="toggleHeader()"
+            >
+              <i class="fa fa-bars hide"></i>
+            </button>
+        </div>
+        <nav id="navigation">
+            <ul>
+              <li>
+                <a href="#liquids" class="active">Liquides</a>
+              </li>
+              <li>
+                <a href="#solids">Solides</a>
+              </li>
+              <li>
+                <a href="#cups">Cups</a>
+              </li>
+              <li>
+                <a href="#spoons">Spoons</a>
+              </li>
+              <li>
+                <a href="#degrees">Température</a>
+              </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="liquids">
+        <h1>Les liquides</h1>
+        <div class="container">
+            <article>
+                <h3><span class="blue">Fl oz </span>to <span class="orange">ml</span></h3>
+                <form>
+                    <label for="flOzToConvert" class="blue">fl oz :</label>
+                    <input type="text" id="flOzToConvert" name="flOzToConvert" placeholder="0">
+                </form>
+                <h2>=</h2>
+                <p class="orange"><span id="flOzToMl">0</span> ml</p>
+            </article>
+            <article>
+                <h3><span class="blue">Ml</span> to <span class="orange">fl oz</span></h3>
+                <form>
+                    <label for="mlToConvert" class="blue">ml :</label>
+                    <input type="text" id="mlToConvert" name="mlToConvert" placeholder="0">
+                </form>
+                <h2>=</h2>
+                <p class="orange"><span id="mlToFlOz">0</span> fl oz</p>
+            </article>
+        </div>
+    </section>
+    
+    <section id="solids">
+        <h1>Les solides</h1>
+        <div class="container">
+            <article>
+                <h3><span class="blue">Oz</span> to <span class="orange">Gr</span></h3>
+                <form>
+                    <label for="ozToConvert" class="blue">oz :</label>
+                    <input type="text" id="ozToConvert" name="ozToConvert" placeholder="0">
+                </form>
+                <h2>=</h2>
+                <p class="orange"><span id="ozToGr">0</span> gr</p>
+            </article>
+            <article>
+                <h3><span class="blue">Gr</span> to <span class="orange">Oz</span></h3>
+                <form>
+                    <label for="grToConvert" class="blue">gr :</label>
+                    <input type="text"  id="grToConvert" name="grToConvert" placeholder="0">
+                </form>
+                <h2>=</h2>
+                <p class="orange"><span id="grToOz">0</span> oz</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="cups">
+        <h1>Cups</h1>
+        <article>
+            <h3></h3>
+            <form>
+                <input type="text"id="cupToConvert" name="cupToConvert" placeholder="0">
+                <label for="cupToConvert" class="blue"> cup(s) of </label>
+            </form>
+            <select name="cupContent" id="cupContent">
+                <option value="">--Please choose an option--</option>
+                <option value="liquid" id="liquid">liquid</option>
+                <option value="flour" id="flour">flour</option>
+                <option value="sugar" id="sugar">sugar</option>
+                <option value="brownSugar" id="brownSugar">brown sugar</option>
+                <option value="butter" id="butter">butter</option>
+                <option value="chocolatechips" id="chocolatechips">chocolate chips</option>
+                <option value="choppednuts" id="choppednuts">chopped nuts</option>     
+            </select>
+            <h2>=</h2>
+            <p id="cupToUnit" class="orange"> 0 unité</p>
+        </article>
+    </section>
+
+    <section id="spoons">
+        <h1>Spoons / Les cuillerées</h1>
+        <div class="container">
+            <article>
+                <h3>Teaspoon / Cuillère à thé</h3>
+                <form>
+                    <label for="tspToConvert" class="blue">tsp :</label>
+                    <input type="text" id="tspToConvert" name="tspToConvert" placeholder="0">
+                </form>
+                <div class="result">
+                    <h2>=</h2>
+                    <ul>
+                        <li class="orange"><span id="tspToMl">0</span> ml</li>
+                        <li class="orange"><span id="tspToTbsp" >0</span> tbsp</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>Tablespoon / Cuillère à soupe</h3>
+                <form>
+                    <label for="tbspToConvert" class="blue">tbsp :</label>
+                    <input type="text" id="tbspToConvert" name="tbspToConvert" placeholder="0">
+                </form>
+                <div class="result">
+                    <h2>=</h2>
+                    <ul>
+                        <li class="orange"><span id="tbspToMl">0</span> ml</li>
+                        <li class="orange"><span id="tbspToTsp">0</span> tsp</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="degrees">
+        <h1>Température</h1>
+        <div class="container">
+            <article>
+                <h3><span class="blue">Fahrenheit</span> to <span class="orange">Celsius</span> </h3>
+                <form>
+                    <label for="fToConvert" class="blue">°F :</label>
+                    <input type="text" id="fToConvert" name="fToConvert" placeholder="0">
+                </form>
+                <h2>=</h2>
+                <p class="orange"><span id="fToC">0</span> °C</p>
+            </article>
+            <article>
+                <h3><span class="blue">Celsius</span> to <span class="orange">Fahrenheit</span></h3>
+                <form>
+                    <label for="cToConvert" class="blue">°C :</label>
+                    <input type="text" id="cToConvert" name="cToConvert" placeholder="0">
+                </form>
+                <h2>=</h2>
+                <p class="orange""><span id="cToF">0</span> °F</p>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>Johanna-Fgt | 2022</p><br>
+        <img src="./images/cooking.png" alt="Logo Cooking converter" title="Cooking icons created by Freepik - Flaticon"/><br>
+        <a href="/">Cooking converter for travelers</a>
+    </footer>
+
+    <script src="./script.js" type="text/javascript"></script>
+
+</body>
+</html>
